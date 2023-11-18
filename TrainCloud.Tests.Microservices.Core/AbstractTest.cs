@@ -19,11 +19,4 @@ public class AbstractTest<TProgram> where TProgram : class
             //});
         });
     }
-
-    protected System.Net.Http.HttpClient Login(string username, string password)
-    {
-        System.Net.Http.HttpClient client = ApplicationFactory.CreateClient();
-
-        return client;
-    }
 }
