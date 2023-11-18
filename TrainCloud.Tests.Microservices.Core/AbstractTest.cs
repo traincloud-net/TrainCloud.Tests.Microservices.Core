@@ -5,9 +5,11 @@ namespace TrainCloud.Tests.Microservices.Core;
 
 public class AbstractTest<TProgram> where TProgram : class
 {
-    protected WebApplicationFactory<TProgram> ApplicationFactory { get; init; }
+    protected WebApplicationFactory<TProgram>? ApplicationFactory { get; private set; }
 
-    public AbstractTest()
+    protected System.Net.Http.HttpClient? Client { get; set; } 
+
+    protected void InitializeApplication()
     {
         ApplicationFactory = new WebApplicationFactory<TProgram>().WithWebHostBuilder(builder =>
         {
