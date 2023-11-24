@@ -9,7 +9,7 @@ public class AbstractTest<TProgram> where TProgram : class
 
     protected System.Net.Http.HttpClient? Client { get; set; } 
 
-    protected void InitializeApplication()
+    protected void InitializeApplicationFactory()
     {
         ApplicationFactory = new WebApplicationFactory<TProgram>().WithWebHostBuilder(builder =>
         {
@@ -20,5 +20,7 @@ public class AbstractTest<TProgram> where TProgram : class
             //    services.AddScoped<IImageAnnotatorService, ImageAnnotatorTestService>();
             //});
         });
+
+        Client = ApplicationFactory!.CreateClient();
     }
 }
