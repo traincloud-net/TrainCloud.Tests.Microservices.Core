@@ -9,8 +9,6 @@ public class AbstractTest<TProgram> where TProgram : class
 {
     protected WebApplicationFactory<TProgram>? ApplicationFactory { get; private set; }
 
-    protected System.Net.Http.HttpClient? Client { get; set; }
-
     public AbstractTest(Action<IWebHostBuilder>? onBuildAction = null)
     {
         ApplicationFactory = new WebApplicationFactory<TProgram>().WithWebHostBuilder(builder =>
