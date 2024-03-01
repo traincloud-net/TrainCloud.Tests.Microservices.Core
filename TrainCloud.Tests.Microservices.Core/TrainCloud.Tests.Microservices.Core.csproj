@@ -8,7 +8,7 @@
 
 		<ItemGroup>
 				<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.1" />
-				<PackageReference Include="TrainCloud.HttpClient" Version="0.0.6" />
+				<PackageReference Include="TrainCloud.HttpClient" Version="0.0.7" />
 		</ItemGroup>
 
 </Project>
