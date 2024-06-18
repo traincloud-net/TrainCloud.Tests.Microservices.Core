@@ -35,10 +35,10 @@ Add the TrainCloud NuGet Feed to you `nuget.config` file.
 </configuration>
 ```
 
-Add `TrainCloud.HttpClient` package to the project
+Add `TrainCloud.Tests.Microservices.Core` package to the project
 
 ```bash
-dotnet add package TrainCloud.HttpClient
+dotnet add package TrainCloud.Tests.Microservices.Core
 ```
 
 Add the namespace `TrainCloud.Tests.Microservices.Core` to global usings
