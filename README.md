@@ -2,7 +2,7 @@
 
 The `TrainCloud.Tests.Microservices.Core` library provides a base class for the tests in `TrainCloud.Tests.Microservices.*` projects.
 
-All unit tests for the API inherit from `AbstractTest<TProgram>` where `TProgram` is the instance of the class `Program` in the file `Program.cs` from the service.
+All unit tests for the API inherit from `ApiTest<TProgram>` where `TProgram` is the instance of the class `Program` in the file `Program.cs` from the service.
 
 ## Status
 
@@ -57,7 +57,7 @@ using System.Net;
 namespace TrainCloud.Tests.Microservices.Example;
 
 [TestClass]
-public class UnitTest_Example : AbstractTest<Program>
+public class UnitTest_Example : ApiTest<Program>
 {
     [TestMethod]
     public async Task TestMethod_Example()
