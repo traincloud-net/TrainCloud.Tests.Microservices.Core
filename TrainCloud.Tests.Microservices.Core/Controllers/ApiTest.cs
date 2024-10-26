@@ -11,7 +11,7 @@ namespace TrainCloud.Tests.Microservices.Core.Controllers;
 /// Base class for controllers in TrainCloud.Tests.Microservices.*
 /// </summary>
 /// <typeparam name="TProgram">The Program class from the Program.cs</typeparam>
-public class ApiTest<TProgram> where TProgram : class
+public abstract class ApiTest<TProgram> where TProgram : class
 {
     /// <summary>
     /// The WebApplicationFactory which hosts the tested service
@@ -22,7 +22,7 @@ public class ApiTest<TProgram> where TProgram : class
     /// Creates the WebApplicationFactory instance of the currently tested service and raises a action for optional customizing of the IWebHostBuilder
     /// </summary>
     /// <param name="onBuildAction">Optional action to customize the IWebHostBuilder</param>
-    public ApiTest(Action<IWebHostBuilder>? onBuildAction = null)
+    protected ApiTest(Action<IWebHostBuilder>? onBuildAction = null)
     {
         ApplicationFactory = new WebApplicationFactory<TProgram>().WithWebHostBuilder(builder =>
         {
