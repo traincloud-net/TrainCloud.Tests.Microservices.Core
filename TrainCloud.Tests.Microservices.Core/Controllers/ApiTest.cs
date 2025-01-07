@@ -26,7 +26,7 @@ public abstract class ApiTest<TProgram> where TProgram : class
     {
         ApplicationFactory = new WebApplicationFactory<TProgram>().WithWebHostBuilder(builder =>
         {
-            builder.UseEnvironment("Test");
+            builder.UseEnvironment("Tests");
             if (onBuildAction is not null)
             {
                 onBuildAction(builder);
