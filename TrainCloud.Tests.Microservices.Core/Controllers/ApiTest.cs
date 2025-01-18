@@ -41,12 +41,12 @@ public abstract class ApiTest<TProgram> where TProgram : class
     /// <param name="userName">The user name of the test user</param>
     /// <param name="password">The password of the Testuser</param>
     /// <returns></returns>
-    public async Task<System.Net.Http.HttpClient> GetClientAsync(string userName, string password)
+    public async Task<System.Net.Http.HttpClient> GetClientAsync(string email, string password)
     {
         System.Net.Http.HttpClient loginClient = new();
         PostSignInModel postModel = new()
         {
-            UserName = userName,
+            Email = email,
             Password = password
         };
 
