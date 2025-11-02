@@ -50,7 +50,8 @@ public abstract class ApiTest<TProgram> where TProgram : class
             Password = password
         };
 
-        TokenModel? model = await loginClient.PostRequestAsync<PostSignInModel, TokenModel>("https://tests-traincloud-microservices-identity-west3-317588625388.europe-west3.run.app/Identity/SignIn", postModel);
+        string unitTestsSignInUrl = "https://identity.traincloud.dev/Identity/SignIn";
+        TokenModel? model = await loginClient.PostRequestAsync<PostSignInModel, TokenModel>(unitTestsSignInUrl, postModel);
 
         System.Net.Http.HttpClient client = GetClient(model?.Token);
 
